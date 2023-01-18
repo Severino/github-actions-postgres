@@ -1,0 +1,24 @@
+{
+  "name": "github-actions-postgres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Severino/github-actions-postgres.git"
+  },
+  "author": "Severin Opel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Severino/github-actions-postgres/issues"
+  },
+  "homepage": "https://github.com/Severino/github-actions-postgres#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "pg-promise": "^11.0.2"
+  }
+}
