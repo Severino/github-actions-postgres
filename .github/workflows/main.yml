@@ -17,7 +17,6 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_HOST: postgres
           POSTGRES_PASSWORD: database
         ports:
           - 5432:5432
@@ -43,3 +42,8 @@ jobs:
         # the table with data, and then retrieves the data.
         run: node client.js
         # Environment variables used by the `client.js` script to create a new PostgreSQL table.
+        env:
+          # use localhost for the host here because we are running the job on the VM.
+          # If we were running the job on in a container this would be postgres
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
