@@ -17,9 +17,7 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: database
-        ports:
-          - 5432:5432
+          POSTGRES_PASSWORD: postgres
         # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
@@ -46,4 +44,4 @@ jobs:
           # use localhost for the host here because we are running the job on the VM.
           # If we were running the job on in a container this would be postgres
           POSTGRES_HOST: postgres
-          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }} # get randomly assigned published port
+          POSTGRES_PORT: 5432 # get randomly assigned published port
